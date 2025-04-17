@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<body>
+    
+    <h1>Task  of  javaScript</h1>
+    <h2>1.Basic Information Form</h2>
+<form id="infoForm">
+  <label>Name: <input type="text" id="name"></label><br>
+  <label>Email: <input type="email" id="email"></label><br>
+  <label>Age: <input type="number" id="age"></label><br>
+  <button type="button" onclick="showInfo()">Submit</button>
+</form>
+
+<div id="output"></div>
+<hr>
+
+
+
+
+<h2>2.Change Image </h2>
+<img id="myImage" src="sun.avif" alt="Placeholder Image" height="400px">
+<br>
+<button onclick="changeImage()">Change Image</button>
+<hr>
+
+<h2>3.Font Size Change</h2>
+<p id="text">Hello Guys Myself Muskan Chaubey.</p>
+<button onclick="changeFontSize(1)">Increase Font</button>
+<button onclick="changeFontSize(-1)">Decrease Font</button>
+<hr>
+
+
+<h2>4.Current Date & Time</h2>
+<div id="datetime"></div>
+
+
+
+
+
+<script>
+  function showInfo() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const age = document.getElementById("age").value;
+    
+    const outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `<h3>Your Info:</h3>
+                           <p>Name: ${name}</p>
+                           <p>Email: ${email}</p>
+                           <p>Age: ${age}</p>`;
+                           
+  }
+
+  function changeImage() {
+    const img = document.getElementById("myImage");
+    img.src = "lotus.avif";
+  }
+
+  let fontSize = 16; 
+
+function changeFontSize(step) {
+  fontSize += step;
+  if (fontSize < 8) fontSize = 8; 
+  document.getElementById("text").style.fontSize = fontSize + "px";
+}
+function showDateTime() {
+    const now = new Date();
+    document.getElementById("datetime").innerText = now.toString();
+  }
+
+  showDateTime(); 
+  setInterval(showDateTime, 1000); 
+  
+</script>
+
+</body>
+</html>
